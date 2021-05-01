@@ -6,8 +6,8 @@ function App() {
 
     return (
         <Router>
-            <div> <p>Hello world!</p> </div>
-            <Link to="/">SearchChampions</Link>
+
+          
             <Switch>
                 <Route path="/">
                     <SearchChampions />
