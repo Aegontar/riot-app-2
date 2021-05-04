@@ -61,37 +61,39 @@ function SearchChampions() {
 
         <div id="page-container">
 
-  
+
 
             <div id="search-area">
-            
-            <div id="search-area-content">
-                <p className="champions">CHAMPIONS</p>
-                <div id="mastery-score-box">
-                    <div id="mastery-score">
-                    <p>0</p>
-                    <p>TOTAL MASTERY SCORE</p>
+
+                <div id="search-area-content">
+                    <p className="champions">CHAMPIONS</p>
+                    <div id="mastery-score-box">
+                        <div id="mastery-score">
+                            <p>0</p>
+                            <p>TOTAL MASTERY SCORE</p>
+                        </div>
+                        <div id="milestones-passed">
+                            <p>0</p>
+                            <p>MILESTONES PASSED</p>
+                        </div>
                     </div>
-                    <div id="milestones-passed">
-                     <p>0</p>
-                     <p>MILESTONES PASSED</p>
-                     </div>
+                    <div id="input-container">
+                        <SearchIcon />
+                        <input type="text" onChange={(e) => setChampionSearchInput(e.target.value)} />
+                    </div>
+                    <p>{championSearchInput}</p>
                 </div>
-                <div id="input-container">
-                <SearchIcon />
-                <input type="text" onChange={(e) => setChampionSearchInput(e.target.value)} />
-                </div>
-                <p>{championSearchInput}</p>
-            </div>
-           
-            
+
+
             </div>
             <div id="result-area">
                 <ul>
                     {filteredChampionNames.map(championName => (
-                        <li style={{ backgroundImage: `url("http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${championName}_0.jpg")`,  backgroundPosition: 'center',
-                        backgroundSize: 'cover',
-                        backgroundRepeat: 'no-repeat'}}><p>{championName}</p></li>
+                        <li ><div style={{
+                            backgroundImage: `url("http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${championName}_0.jpg")`, backgroundPosition: 'center',
+                            backgroundSize: 'cover',
+                            backgroundRepeat: 'no-repeat'
+                        }}></div> <div id="champion-name">  <p>{championName}</p></div></li>
                     ))}
                 </ul>
             </div>
