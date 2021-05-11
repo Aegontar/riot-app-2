@@ -1,14 +1,18 @@
 import { useState, useEffect } from "react";
-import './SearchChampions.css'
-import SearchIcon from '../icons/SearchIcon'
+import './SearchChampions.css';
+import SearchIcon from '../icons/SearchIcon';
+import {Link} from 'react-router-dom';
 
-function SearchChampions() {
+function SearchChampions({clickedChampion, setClickedChampion}) {
     const [championNames, setChampionNames] = useState([])
     const [filteredChampionNames, setfilteredChampionNames] = useState([])
     const [championSearchInput, setChampionSearchInput] = useState("")
+    
+    /* 6.24.1 */
+    
 
     useEffect(() => {
-        fetch('http://ddragon.leagueoflegends.com/cdn/6.24.1/data/en_US/champion.json')
+        fetch('http://ddragon.leagueoflegends.com/cdn/11.10.1/data/en_US/champion.json')
             .then((response) => response.json())
             .then((data) => {
                 const champNames = Object.keys(data.data)
@@ -40,44 +44,29 @@ function SearchChampions() {
         })
 
 
-        /*      setfilteredChampionNames(() => {
-                 const upperCaseChampionNames = championSearchInput.charAt(0).toUpperCase() + championSearchInput.slice(1)
-                 const newValues = championNames.filter(champ => champ.includes(upperCaseChampionNames))
-                 const fullChampionList = championNames
-                 if (championSearchInput === "") {
-                     console.log(fullChampionList)
-                     return fullChampionList
-                 } else if (championSearchInput !== "") {
-                     return newValues
-                 }
-             }) */
-
-
-
     }, [championSearchInput])
-
 
     return (
 
-        <div id="page-container">
+        <div className="page-container">
 
 
 
-            <div id="search-area">
+            <div className="search-area">
 
-                <div id="search-area-content">
+                <div className="search-area-content">
                     <p className="champions">CHAMPIONS</p>
-                    <div id="mastery-score-box">
-                        <div id="mastery-score">
+                    <div className="mastery-score-box">
+                        <div className="mastery-score">
                             <p>0</p>
                             <p>TOTAL MASTERY SCORE</p>
                         </div>
-                        <div id="milestones-passed">
+                        <div className="milestones-passed">
                             <p>0</p>
                             <p>MILESTONES PASSED</p>
                         </div>
                     </div>
-                    <div id="input-container">
+                    <div className="input-container">
                         <SearchIcon />
                         <input type="text" onChange={(e) => setChampionSearchInput(e.target.value)} />
                     </div>
@@ -86,14 +75,14 @@ function SearchChampions() {
 
 
             </div>
-            <div id="result-area">
+            <div className="result-area">
                 <ul>
                     {filteredChampionNames.map(championName => (
-                        <li ><div style={{
+                   <Link to={`/champion/${championName}`} target="_blank" style={{ textDecoration: 'none' }}>     <li><div style={{
                             backgroundImage: `url("http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${championName}_0.jpg")`, backgroundPosition: 'center',
                             backgroundSize: 'cover',
                             backgroundRepeat: 'no-repeat'
-                        }}></div> <div id="champion-name">  <p>{championName}</p></div></li>
+                        }}></div> <div className="champion-name">  <p className="p">{championName}</p></div></li> </Link>
                     ))}
                 </ul>
             </div>
