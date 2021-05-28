@@ -78,7 +78,7 @@ function SearchChampions({clickedChampion, setClickedChampion}) {
             <div className="result-area">
                 <ul>
                     {filteredChampionNames.map(championName => (
-                   <Link to={`/champion/${championName}`} target="_blank" style={{ textDecoration: 'none' }}>     <li><div style={{
+                   <Link to={`/champion/${championName}`} style={{ textDecoration: 'none' }}>     <li><div style={{
                             backgroundImage: `url("http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${championName}_0.jpg")`, backgroundPosition: 'center',
                             backgroundSize: 'cover',
                             backgroundRepeat: 'no-repeat'

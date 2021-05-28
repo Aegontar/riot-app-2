@@ -5,7 +5,7 @@
 .champion-page-container {
  color: blue;
  color: #BEB9A1;
- text-shadow: 0 0 0px #BEB9A1, 0 0 10px #BEB9A1, 0 0 0px #BEB9A1, 0 0 20px #BEB9A1, 0 0 0px #BEB9A1, 0 0 0px #BEB9A1, 0 0 0px #BEB9A1;
+/*  text-shadow: 0 0 0px #BEB9A1, 0 0 10px #BEB9A1, 0 0 0px #BEB9A1, 0 0 20px #BEB9A1, 0 0 0px #BEB9A1, 0 0 0px #BEB9A1, 0 0 0px #BEB9A1; */
  height: 100vh;
  width: 100vw; 
  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(35,35,37,1) 51%, rgba(232,236,237,1) 100%);  
@@ -17,10 +17,202 @@ height: 100%;
 width: 100%;   
 }
 
+.nav-bar {
+ position: absolute;
+ top: 60px;
+ left: 200px   
+}
+
+.nav-bar div {
+  display: inline-block;
+  margin: 0 5px;
+  color: #CFB53B;
+  text-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700, 0 0 15px #FFD700, 0 0 20px;
+  cursor: pointer;
+}
+
+
+  
+
+
 /* overview component
  */
 .overview {
-    width: 50%;
-    margin-left: 5%;
+    width: 600px;
+    padding-left: 2%;
+    height: 100%;
 }
 
+.icon {
+height: 40px;
+width: 40px;
+display: flex;
+padding-top: 10px;
+}
+
+.icon img {
+height: 100%;
+width: 100%;
+}
+
+.name {
+padding-top: 10px;
+color:   #D8D9D5;    
+}
+
+.title {
+padding-top: 10px; 
+color:   #D8D9D5;     
+}
+
+.lore {
+padding-top: 10px;
+padding-right: 100px; 
+color:   #D8D9D5;    
+}
+
+.attack {
+    width: 100%;    
+}
+
+.defence {
+    width: 100%;    
+}
+
+.magic {
+    width: 100%;    
+}
+
+.bar {
+    background-color: "red";
+     
+}
+
+.stats {
+ margin-top: 20px;
+ height: 100px; 
+ width: 70%; 
+}
+
+
+.stats div{
+    margin-top: 10px;
+  
+}
+
+
+.stats img{
+    margin-right: 5px;   
+}
+
+
+.ally-tips {
+margin-top: 60px;
+}
+
+.ally-tips p{
+    margin-top: 10px;
+    color:   #D8D9D5;   
+}
+
+.enemy-tips {
+    margin-top: 30px;
+}
+
+.enemy-tips p{
+    margin-top: 10px;
+    color:   #D8D9D5;   
+}
+  
+.enemy-tips h3{
+    color:   #D8D9D5;   
+}
+
+.ally-tips h3{
+    color:   #D8D9D5;   
+}
+
+/* css for abilities component */
+
+ .abilities {
+    display: inline-block;
+    padding-left: 2%;
+    height: 100%;
+    overflow: hidden;
+    margin: 0%;
+} 
+
+.ability-sprite-container {
+  display: flex;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  border-bottom: 1px solid #24251C; 
+  overflow: hidden;
+}
+
+.ability-sprite-container div{
+    margin: 0 10px; 
+  }
+
+  .ability-sprite-container p{
+    padding-top: 10px;
+  }
+
+.ability-sprite-container img {
+  height: 40px;
+  width: 40px;  
+}
+
+
+.p img {
+  height: 30px;
+  width: 30px;
+  margin-top: 10px;
+   
+}
+
+.ability-sprite-container  img:focus {
+  border: red 5px solid;  
+  }
+
+.ability-sprite-container p {
+   text-align: center;
+   font-size: 12px;
+  }
+
+  hr {
+  position: relative;
+
+  height: 50px;
+}
+
+.fadeOut{
+  opacity: 0%;
+  transition:opacity 2s
+}
+.fadeIn{
+  opacity:100%;
+  transition:opacity 2s
+}
+
+.ability-description {
+  position: relative;
+ width: 290px;
+ color:   #D8D9D5;   
+}
+
+.ability-description h3 {
+position: absolute;
+text-align: center;
+top: 15px;
+width: 100%;
+}
+
+.ability-description p {
+  position: absolute;
+  top: 50px;
+}
+
+.border {
+ border: goldenrod 2px solid;
+}
