@@ -7,18 +7,18 @@ function SearchChampions({clickedChampion, setClickedChampion}) {
     const [championNames, setChampionNames] = useState([])
     const [filteredChampionNames, setfilteredChampionNames] = useState([])
     const [championSearchInput, setChampionSearchInput] = useState("")
-    
-    /* 6.24.1 */
+    const [isLoading, setIsLoading] = useState(false)
     
 
     useEffect(() => {
+        setIsLoading(true) 
         fetch('http://ddragon.leagueoflegends.com/cdn/11.10.1/data/en_US/champion.json')
             .then((response) => response.json())
             .then((data) => {
                 const champNames = Object.keys(data.data)
                 setChampionNames(() => champNames)
                 setfilteredChampionNames(() => champNames)
-
+                setIsLoading(false)    
             })
             .catch((e) => {
             });
@@ -76,6 +76,7 @@ function SearchChampions({clickedChampion, setClickedChampion}) {
 
             </div>
             <div className="result-area">
+           { isLoading? (<div class="lds-ring"  style={{position:"absolute", right:"50%", zIndex:"+10"}}><div></div><div></div><div></div><div></div></div>):(<div></div>)}
                 <ul>
                     {filteredChampionNames.map(championName => (
                    <Link to={`/champion/${championName}`} style={{ textDecoration: 'none' }}>     <li><div style={{
@@ -86,6 +87,7 @@ function SearchChampions({clickedChampion, setClickedChampion}) {
                     ))}
                 </ul>
             </div>
+            
         </div>
     )
 };
@@ -93,10 +95,3 @@ function SearchChampions({clickedChampion, setClickedChampion}) {
 
 
 export default SearchChampions
-
-/*
-{championSearchInput ? filteredChampionNames.map(element => (
-    <li>{element}</li>
-)): championNames.map(element => (
-    <li>{element}</li>
-)) } */

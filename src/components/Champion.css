@@ -5,7 +5,6 @@
 .champion-page-container {
  color: blue;
  color: #BEB9A1;
-/*  text-shadow: 0 0 0px #BEB9A1, 0 0 10px #BEB9A1, 0 0 0px #BEB9A1, 0 0 20px #BEB9A1, 0 0 0px #BEB9A1, 0 0 0px #BEB9A1, 0 0 0px #BEB9A1; */
  height: 100vh;
  width: 100vw; 
  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(35,35,37,1) 51%, rgba(232,236,237,1) 100%);  
@@ -26,15 +25,13 @@ width: 100%;
 .nav-bar div {
   display: inline-block;
   margin: 0 5px;
-  color: #CFB53B;
-  text-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700, 0 0 15px #FFD700, 0 0 20px;
+  color: #BEB9A1;
+  text-shadow: 0 0 5px #BEB9A1, 0 0 10px #BEB9A1, 0 0 15px #BEB9A1, 0 0 20px #BEB9A1;
   cursor: pointer;
+  z-index: +20;
 }
 
-
   
-
-
 /* overview component
  */
 .overview {
@@ -216,3 +213,86 @@ width: 100%;
 .border {
  border: goldenrod 2px solid;
 }
+
+/* css for page loader */
+
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  z-index: -1;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid #fff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #fff transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.arrow {
+  border: solid #BEB9A1; 
+  border-width: 0 10px 10px 0;
+  display: inline-block;
+  padding: 10px;
+  position: absolute;
+  left: 80%;
+  top: 50%;
+}
+
+
+
+.skin {
+width: 100vw;
+height: 100vh;
+}
+
+.skin p{
+ position: absolute;
+ top: 90%;
+ left:40%;
+ font-size: 50px;
+ color: #BEB9A1;
+ text-shadow: 0 0 5px #BEB9A1, 0 0 10px #BEB9A1, 0 0 15px #BEB9A1, 0 0 20px #BEB9A1;
+}
+
+.skin p::first-letter {
+  text-transform: uppercase;
+}
+
+ .arrow-icon {
+ position: absolute; 
+ font-size: 50px;
+ top: 50%;
+ left: 95%;
+} 
+
+.arrow-icon:hover {
+  font-size: 55px;
+  cursor: pointer;
+}
+

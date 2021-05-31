@@ -5,12 +5,9 @@ import './Champion.css';
 import Slayer from "./Slayer_icon.png";
 import Assassin from "./Assassin_icon.png";
 import Mage from "./Mage_icon.png";
-
 import Support from "./Support_icon.png";
 import Fighter from "./Fighter_icon.png";
 import Marksman from "./Marksman_icon.png";
-
-
 
 function Champion() {
     const [championDetail, setChampionDetail] = useState({})
@@ -80,14 +77,9 @@ function Champion() {
 
     }, []);
 
-
-    console.log(championTags)
-    console.log(championEnemyTips)
-
     return (
         <div className="overview">
-            <div className="icon">{championTags.map(tag => (<img src={`/${tag}_icon.png`} />))                                 /* <img src={slayerIcon}  alt="slayer icon"/><img src={marksmanIcon}  alt="slayer icon"/> <img src={supportIcon}  alt="slayer icon"/> */}</div>
-
+            <div className="icon">{championTags.map(tag => (<img src={`/${tag}_icon.png`} />))}</div>
             <h2 className="name">{championDetail.name}</h2>
             <p className="title">{championDetail.title}</p>
             <p className="lore">{championDetail.lore}</p>

@@ -7,12 +7,8 @@ import { useParams } from "react-router-dom";
 import './Champion.css';
 
 function Champion({ }) {
-
     const [currentComponent, setCurrentComponent] = useState("Overview")
-
-
     const { championName } = useParams()
-
 
     return (
         <div className="champion-page-container" style={{
@@ -23,14 +19,14 @@ function Champion({ }) {
         }}>
             <div className="button-div">
                 <div className="nav-bar">
-                <div onClick={e => setCurrentComponent("Overview")} >Champion</div>
-                <div onClick={e => setCurrentComponent("Abilities")} >Abilities</div>
-                <div onClick={e => setCurrentComponent("Skin")} >Skin</div>
-           </div>
+                    <div onClick={e => setCurrentComponent("Overview")} >Champion</div>
+                    <div onClick={e => setCurrentComponent("Abilities")} >Abilities</div>
+                    <div onClick={e => setCurrentComponent("Skin")} >Skin</div>
+                    <a href="http://localhost:3000/"><div >Home</div></a>
+                </div>
 
             </div>
             <div className="image-gradient">
-
 
                 {currentComponent === 'Abilities' && (
                     <Abilities />
