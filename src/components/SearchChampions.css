@@ -4,7 +4,7 @@ html, body {
   margin: 0;
 }
 
- .page-container { 
+.page-container { 
   display: flex;
   flex-direction: row;  
   font-family: Times;
@@ -17,28 +17,28 @@ html, body {
  /* Search area section */ 
   
  .search-area{
-    width: 20vw; 
+    width: 300px; 
     height: 100vh;
     position: fixed;
     background-color:  #09131C;
     }
     
-  .search-area-content {
+.search-area-content {
     margin: 0 auto;
     height: 100vh;
     width: 200px;
     }
     
-  .searchicon {
+.searchicon {
    color: #BEB9A1;
    text-shadow: 0 0 0px #BEB9A1, 0 0 10px #BEB9A1, 0 0 0px #BEB9A1, 0 0 20px #BEB9A1, 0 0 0px #BEB9A1, 0 0 0px #BEB9A1, 0 0 0px #BEB9A1;
    width: 18px;
    height: 18px;
-   position: absolute;
-    padding: 3px;
-    }
+   position: relative;
+   top: 25px;
+   left: 5px;
+  }
     
-
 
 .champions {
   margin-top: 20px;
@@ -83,7 +83,7 @@ input {
   width: 180px;
   }
 
- input:focus {
+input:focus {
   outline: none !important;
   border:2px solid #24251C;
   }
@@ -131,9 +131,71 @@ li p {
   margin-top: 60px;
   width: 80vw;
   height: 100%;
-  margin-left: 20vw;
+  margin-left: 300px;
 /*   background-color: #09131C;   */ 
-  }
+}
+
+
+/*   responsive code */
+
+
+.mobile-input-container {
+  width: 192px;
+  margin: 0 auto;
+  padding: 40px 0;
+  display: none;
+}
+
+.result-area h4{
+  color: #BEB9A1;
+  text-shadow: 0 0 0px #BEB9A1, 0 0 10px #BEB9A1, 0 0 0px #BEB9A1, 0 0 20px #BEB9A1, 0 0 0px #BEB9A1, 0 0 0px #BEB9A1, 0 0 0px #BEB9A1;
+  text-align: center;
+  display: none;
+}
+
+@media only screen and (max-width: 535px) {
+
+.search-area{
+    width: 0px; 
+    height: 00vh;
+    position: relative;
+    background-color:  #09131C;
+    display: none;  
+}
+
+.result-area{
+    margin-top: 60px;
+    width: 100vw;
+    height: 100%;
+    margin: 10px auto;
+}
+
+    
+ul {
+display: grid; 
+grid-template-columns: repeat( auto-fit, minmax(150px, 150px) );
+list-style: none;
+grid-gap: 30px;
+padding: 0;
+justify-content: center;
+margin: auto;
+}
+
+.mobile-input-container {
+  width: 192px;
+  margin: 0 auto;
+  padding: 40px 0;
+  display: block;
+}
+
+.result-area h4{
+  color: #BEB9A1;
+  text-shadow: 0 0 0px #BEB9A1, 0 0 10px #BEB9A1, 0 0 0px #BEB9A1, 0 0 20px #BEB9A1, 0 0 0px #BEB9A1, 0 0 0px #BEB9A1, 0 0 0px #BEB9A1;
+  text-align: center;
+  display: block;
+}
+
+}
 
 /* page loader css */
 
@@ -146,6 +208,7 @@ li p {
   position: absolute;
   left: 50%;
 }
+
 .lds-ring div {
   box-sizing: border-box;
   display: block;

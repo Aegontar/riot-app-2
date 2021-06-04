@@ -34,10 +34,8 @@ function Skin() {
             });
     }, [])
 
-    console.log(SkinArray)
 
     const nextSkin = () => {
-
         if (currentSkinIndex >= 0 && currentSkinIndex < totalSkinindex - 1) {
             setCurrentSkinIndex(oldValue => {
                 const newValue = oldValue + 1
@@ -47,16 +45,12 @@ function Skin() {
             setCurrentSkinIndex(0)
         }
     }
-    const nextName = () => {
-        alert('hi')
-
-    }
 
     return (
-
         <div className="skin" >
-            <p>{skinNames[currentSkinIndex]}</p>  <FontAwesomeIcon icon={faChevronRight} className="arrow-icon " onClick={() => nextSkin()} />
-            <img src={`http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${championName}_${SkinArray[currentSkinIndex]}.jpg`} style={{ width: "100%", height: "100%", objectFit: "cover", zIndex: '+10' }} />
+            <FontAwesomeIcon icon={faChevronRight} className="arrow-icon " onClick={() => nextSkin()} />
+            <img src={`http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${championName}_${SkinArray[currentSkinIndex]}.jpg`} style={{ height: "100%", width: "100%", objectFit: "scale-down", position: "absolute" }} />
+            <p >{skinNames[currentSkinIndex]}</p>
         </div>
     )
 }

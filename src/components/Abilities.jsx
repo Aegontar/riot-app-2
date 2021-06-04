@@ -2,23 +2,11 @@ import { useState, useEffect } from "react";
 import './SearchChampions.css';
 import { useParams } from "react-router-dom";
 import './Champion.css';
-import Slayer from "./Slayer_icon.png";
-import Assassin from "./Assassin_icon.png";
-import Mage from "./Mage_icon.png";
-
-import Support from "./Support_icon.png";
-import Fighter from "./Fighter_icon.png";
-import Marksman from "./Marksman_icon.png";
-
-
 
 function Abilities() {
     const [championDetail, setChampionDetail] = useState({})
     const { championName } = useParams()
     const [championTags, setChampionTag] = useState([])
-    const [championInfo, setChampionInfo] = useState([])
-    const [championAllayTips, setChampionAllayTips] = useState([])
-    const [championEnemyTips, setChampionEnemyTips] = useState([])
     const [abilities, setAbilities] = useState([])
     const [passive, setPassive] = useState([])
     const [passiveInfo, setPassiveInfo] = useState([])
@@ -38,9 +26,6 @@ function Abilities() {
                     setAbilities(e.spells)
                     setPassive(e.passive.image.full)
                     setPassiveInfo(e.passive)
-                    setChampionInfo(e.info)
-                    setChampionAllayTips(e.allytips)
-                    setChampionEnemyTips(e.enemytips)
                     setIsLoading(false)
                     return e
                 })
@@ -49,16 +34,9 @@ function Abilities() {
             });
     }, []);
 
-
-    console.log(championTags)
-    console.log(passiveInfo.name)
-
     let abilityNames = abilities.map(a => a.name);
-    console.log()
     let imageNames = abilities.map(a => a.image.full);
-    console.log(imageNames[0])
     let abilityDescription = abilities.map(a => a.description);
-    console.log(abilityDescription)
 
     return (
         <div className="abilities">

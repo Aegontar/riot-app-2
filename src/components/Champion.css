@@ -5,24 +5,56 @@
 .champion-page-container {
  color: blue;
  color: #BEB9A1;
- height: 100vh;
- width: 100vw; 
  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(35,35,37,1) 51%, rgba(232,236,237,1) 100%);  
+ pointer-events: none; 
+ display: flex;
+ flex-direction: row;  
+ width: 100%;
+ height: auto;
+ min-height: 100vh;
 }
+
 
 .image-gradient {
 background: linear-gradient(90deg, rgba(0,0,0,1) 20%, rgba(0,0,0,.8) 50%, rgba(0,0,0,.6) 70%, rgba(0,0,0,.1) 100%); 
 height: 100%;
-width: 100%;   
+width: 100%; 
+
 }
 
 .nav-bar {
  position: absolute;
  top: 60px;
- left: 200px   
+ right: 0;
+ left: 0;
+ text-align: center;
+ z-index: +20; 
+ pointer-events: auto;  
+}
+
+.mobile-nav-bar{
+  position: absolute;
+  right: 0px;
+  top: 85px;
+  background: rgba(190,185,161,.1); 
+  pointer-events: auto;
+  cursor: pointer;
+  display: none;
+}
+
+.mobile-nav-bar div {
+  padding-top: 6px;
+  display: block;
+  margin: 0 5px;
+  color: #BEB9A1;
+  text-shadow: 0 0 5px #BEB9A1, 0 0 10px #BEB9A1, 0 0 15px #BEB9A1, 0 0 20px #BEB9A1;
+  cursor: pointer;
+  z-index: +20;
+  
 }
 
 .nav-bar div {
+  padding-top: 4px;
   display: inline-block;
   margin: 0 5px;
   color: #BEB9A1;
@@ -31,14 +63,42 @@ width: 100%;
   z-index: +20;
 }
 
+.bars-icon {
+  position: absolute;
+  right: 20px;
+  top: 60px;
+  font-size: 30px;
+  display: none;
+  pointer-events: auto 
+}
   
+@media only screen and (max-width:600px){
+  .bars-icon {
+    display: block;
+  }
+  .nav-bar {
+    display: none;
+  }
+  .mobile-nav-bar{
+   display: block;
+  }
+}
+
 /* overview component
  */
 .overview {
     width: 600px;
     padding-left: 2%;
-    height: 100%;
+    height: 100vh; 
 }
+
+@media only screen and (max-width: 620px) {
+  .overview {
+    width: 100vw;
+    padding-left: 2%;
+    height: 100vh;
+}
+} 
 
 .icon {
 height: 40px;
@@ -86,7 +146,7 @@ color:   #D8D9D5;
 }
 
 .stats {
- margin-top: 20px;
+ padding-top: 60px;
  height: 100px; 
  width: 70%; 
 }
@@ -104,16 +164,19 @@ color:   #D8D9D5;
 
 
 .ally-tips {
-margin-top: 60px;
+padding-top: 100px;
+
 }
 
 .ally-tips p{
     margin-top: 10px;
-    color:   #D8D9D5;   
+    color:   #D8D9D5;
+    
 }
 
 .enemy-tips {
-    margin-top: 30px;
+  padding-top: 100px;
+  
 }
 
 .enemy-tips p{
@@ -131,12 +194,24 @@ margin-top: 60px;
 
 /* css for abilities component */
 
- .abilities {
+
+.abilities {
+  display: inline-block;
+  padding-left: 2%;
+  height: 100vh;
+  width: 300px;
+  margin: 0%;
+  pointer-events: auto;
+} 
+
+
+@media only screen and (max-width: 620px) {
+  .abilities {
     display: inline-block;
+    height: 100vh;
     padding-left: 2%;
-    height: 100%;
-    overflow: hidden;
     margin: 0%;
+} 
 } 
 
 .ability-sprite-container {
@@ -269,15 +344,25 @@ width: 100%;
 .skin {
 width: 100vw;
 height: 100vh;
+overflow: hidden;
+position: relative;
+pointer-events: none;
 }
 
 .skin p{
  position: absolute;
- top: 90%;
- left:40%;
- font-size: 50px;
+ text-align: center;
+ bottom: 0;
+ left: 0;
+ right:0;
+ font-size: 30px;
  color: #BEB9A1;
  text-shadow: 0 0 5px #BEB9A1, 0 0 10px #BEB9A1, 0 0 15px #BEB9A1, 0 0 20px #BEB9A1;
+ pointer-events: none 
+}
+
+.skin img{
+  pointer-events: none 
 }
 
 .skin p::first-letter {
@@ -285,10 +370,13 @@ height: 100vh;
 }
 
  .arrow-icon {
- position: absolute; 
- font-size: 50px;
- top: 50%;
- left: 95%;
+ position: absolute;
+ text-align: center; 
+ font-size: 30px;
+ bottom: 0;
+ left: 90%;
+ z-index: +20;
+ pointer-events: auto;
 } 
 
 .arrow-icon:hover {
