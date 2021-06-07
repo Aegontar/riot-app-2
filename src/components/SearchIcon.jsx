@@ -1,4 +1,4 @@
-import "../components/SearchChampions.css"
+import "../css/SearchChampions.css"
 
 function SearchIcon() {
 

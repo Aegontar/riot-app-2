@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import './Champion.css';
+import '../css/Champion.css';
 import { useParams } from "react-router-dom";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

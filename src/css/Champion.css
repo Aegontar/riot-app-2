@@ -3,22 +3,19 @@
 }
 
 .champion-page-container {
- color: blue;
  color: #BEB9A1;
  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(35,35,37,1) 51%, rgba(232,236,237,1) 100%);  
- pointer-events: none; 
- display: flex;
- flex-direction: row;  
- width: 100%;
- height: auto;
- min-height: 100vh;
+/* pointer-events: none; */  
+ width: 100vw;
+ height: 100vh;
+ overflow: auto;
+
 }
 
 
 .image-gradient {
 background: linear-gradient(90deg, rgba(0,0,0,1) 20%, rgba(0,0,0,.8) 50%, rgba(0,0,0,.6) 70%, rgba(0,0,0,.1) 100%); 
-height: 100%;
-width: 100%; 
+overflow-y: auto;
 
 }
 
@@ -90,14 +87,16 @@ width: 100%;
     width: 600px;
     padding-left: 2%;
     height: 100vh; 
-}
+   
+  }
 
 @media only screen and (max-width: 620px) {
   .overview {
     width: 100vw;
     padding-left: 2%;
     height: 100vh;
-}
+    
+    }
 } 
 
 .icon {
@@ -176,8 +175,8 @@ padding-top: 100px;
 
 .enemy-tips {
   padding-top: 100px;
-  
-}
+ 
+  }
 
 .enemy-tips p{
     margin-top: 10px;

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import './SearchChampions.css';
+import '../css/SearchChampions.css';
 import { useParams } from "react-router-dom";
-import './Champion.css';
+import '../css/Champion.css';
 
 function Champion() {
   const [championDetail, setChampionDetail] = useState({})
@@ -74,14 +74,14 @@ function Champion() {
   return (
     <div className="overview">
       { isLoading ? (<div class="lds-ring" style={{ position: "absolute", right: "50%", zIndex: "+10" }}><div></div><div></div><div></div><div></div></div>) : (<div></div>)}
-      <div className="icon">{championTags.map(tag => (<img src={`/${tag}_icon.png`} />))}</div>
+      <div className="icon">{championTags.map(tag => (<img src={`../icons/${tag}_icon.png`} />))}</div>
       <h2 className="name">{championDetail.name}</h2>
       <p className="title">{championDetail.title}</p>
       <p className="lore">{championDetail.lore}</p>
       <div className="stats" style={{ height: "50px" }}>
-        <div className="attack"> <img src="/Attack.png" style={{ height: "19px", width: "16px" }} /> <div className="bar" style={{ display: "inline-block", background: "#0097AA", width: `${championInfo.attack * 20}px`, height: "10px" }}></div> {championInfo.attack}</div>
-        <div className="defence"> <img src="/Defence.png" /> <div style={{ display: "inline-block", width: `${championInfo.defense * 20}px`, height: "10px", background: "#0097AA", }}></div> {championInfo.defense}</div>
-        <div className="magic"> <img src="/Magic2.png" style={{}} /> <div style={{ display: "inline-block", width: `${championInfo.magic * 20}px`, height: "10px", background: "#0097AA" }}></div> {championInfo.magic}</div>
+        <div className="attack"> <img src="../icons/Attack.png" style={{ height: "19px", width: "16px" }} /> <div className="bar" style={{ display: "inline-block", background: "#0097AA", width: `${championInfo.attack * 20}px`, height: "10px" }}></div> {championInfo.attack}</div>
+        <div className="defence"> <img src="../icons/Defence.png" /> <div style={{ display: "inline-block", width: `${championInfo.defense * 20}px`, height: "10px", background: "#0097AA", }}></div> {championInfo.defense}</div>
+        <div className="magic"> <img src="../icons/Magic2.png" style={{}} /> <div style={{ display: "inline-block", width: `${championInfo.magic * 20}px`, height: "10px", background: "#0097AA" }}></div> {championInfo.magic}</div>
       </div>
       <div className="ally-tips">
         <h3>Ally Tips</h3>

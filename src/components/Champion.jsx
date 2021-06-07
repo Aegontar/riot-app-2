@@ -1,10 +1,10 @@
 import { useState } from "react";
-import './SearchChampions.css';
+import '../css/SearchChampions.css';
 import Overview from './Overview'
 import Abilities from './Abilities'
 import Skin from './Skin'
 import { useParams } from "react-router-dom";
-import './Champion.css';
+import '../css/Champion.css';
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -14,12 +14,12 @@ function Champion({ }) {
     const { championName } = useParams()
 
     return (
-        <div className="champion-page-container" style={{
+        <div name="viewport" content="width=device-width, initial-scale=1.0" className="champion-page-container" style={{
             backgroundImage: `url("http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${championName}_0.jpg")`, backgroundPosition: 'center',
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
             backgroundRepeat: 'no-repeat',
-            backgroundAttachment: 'fixed'
+           
         }}>
             <div className="button-div">
                 <div className="nav-bar">

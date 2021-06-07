@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import './SearchChampions.css';
-import SearchIcon from '../icons/SearchIcon';
+import '../css/SearchChampions.css';
+import SearchIcon from './SearchIcon';
 import { Link } from 'react-router-dom';
 
 function SearchChampions({ clickedChampion, setClickedChampion }) {

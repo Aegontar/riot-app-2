@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import './SearchChampions.css';
+import '../css/SearchChampions.css';
 import { useParams } from "react-router-dom";
-import './Champion.css';
+import '../css/Champion.css';
 
 function Abilities() {
     const [championDetail, setChampionDetail] = useState({})
@@ -41,7 +41,7 @@ function Abilities() {
     return (
         <div className="abilities">
             { isLoading ? (<div class="lds-ring" style={{ position: "absolute", right: "50%", zIndex: "+10" }}><div></div><div></div><div></div><div></div></div>) : (<div></div>)}
-            <div className="icon">{championTags.map(tag => (<img src={`/${tag}_icon.png`} />))}</div>
+            <div className="icon">{championTags.map(tag => (<img src={`../icons/${tag}_icon.png`} />))}</div>
             <h2 className="name">{championDetail.name}</h2>
             <p className="title">{championDetail.title}</p>
 
